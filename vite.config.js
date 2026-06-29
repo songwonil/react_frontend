@@ -5,13 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173, // React 개발 서버 포트 고정
+    port: 5173,
+    fs: {
+      allow: ['..'],  // insa/css/style.css 등 상위 디렉토리 파일 접근 허용
+    },
     proxy: {
-      // 프론트엔드에서 '/insa'로 시작하는 모든 API 요청을 톰캣 서버(8080) 주소로 우회시킵니다.
       '/insa': {
-        target: 'http://localhost:8080', 
-        changeOrigin: true,              
-        secure: false ,
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false,
       }
     }
   }
