@@ -40,7 +40,7 @@ const MENU_GROUPS = [
                 items: [
                     { label: '발령품의등록', href: '#' },
                     { label: '발령품의결재', href: '#' },
-                    { label: '발령내역관리', href: '#' }
+                    { label: '발령내역관리', href: '/cam/CAM_030', key: 'CAM_030' }
                 ]
             },
             {
